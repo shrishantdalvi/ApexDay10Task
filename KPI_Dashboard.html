@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+/* MAIN PAGE */
+body {
+    background-color: #0B1628;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 25px;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* DASHBOARD HEADING */
+.dashboard-title {
+    color: #00D4FF;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* KPI SECTION */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.kpi-card {
+    padding: 22px;
+    border-radius: 14px;
+    color: white;
+    min-height: 115px;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+.kpi-card p {
+    font-size: 14px;
+    margin: 0 0 18px 0;
+}
+
+.kpi-card h2 {
+    font-size: 23px;
+    margin: 0;
+}
+
+/* DASHBOARD SECTIONS */
+.dashboard-section {
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+/* SECTION HEADINGS */
+.section-title {
+    color: #00D4FF;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #405675;
+}
+
+/* CHART GRID */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* CHART CARDS */
+.chart-card {
+    background: #142D4E;
+    border: 1px solid #405675;
+    border-radius: 14px;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.chart-card:hover {
+    transform: translateY(-3px);
+}
+
+/* CHART TITLES */
+.chart-card h3 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0 15px 0;
+    min-height: 22px;
+}
+
+/* ALL CHART IMAGES */
+.chart-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    margin: auto;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 900px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card img {
+        height: 300px;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 550px) {
+    body {
+        padding: 12px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card {
+        padding: 10px;
+    }
+
+    .chart-card img {
+        height: 220px;
+    }
+
+    .chart-card h3 {
+        font-size: 14px;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h1 class="dashboard-title">Superstore Business Dashboard</h1>
+
+<!-- KPI SECTION -->
+<div class="kpi-grid">
+
+    <div class="kpi-card" style="background:#142D4E;">
+        <p style="color:#A9C9ED;">TOTAL SALES</p>
+        <h2>$2,297,200.86</h2>
+    </div>
+
+    <div class="kpi-card" style="background:#17465A;">
+        <p style="color:#A9E1E8;">TOTAL PROFIT</p>
+        <h2>$286,397.02</h2>
+    </div>
+
+    <div class="kpi-card" style="background:#263B68;">
+        <p style="color:#B8CCFF;">TOTAL ORDERS</p>
+        <h2>5,009</h2>
+    </div>
+
+    <div class="kpi-card" style="background:#49345F;">
+        <p style="color:#E0C5FF;">TOTAL CUSTOMERS</p>
+        <h2>793</h2>
+    </div>
+
+    <div class="kpi-card" style="background:#17534D;">
+        <p style="color:#A9E8D7;">TOTAL PRODUCTS</p>
+        <h2>1,862</h2>
+    </div>
+
+    <div class="kpi-card" style="background:#59432C;">
+        <p style="color:#F5D5A6;">PROFIT MARGIN</p>
+        <h2>12.47%</h2>
+    </div>
+
+    <div class="kpi-card" style="background:#34445B;">
+        <p style="color:#C6D9F1;">AVERAGE ORDER VALUE</p>
+        <h2>$458.61</h2>
+    </div>
+
+</div>
+
+<!-- SALES ANALYSIS SECTION -->
+<div class="dashboard-section">
+
+    <h2 class="section-title">Sales Analysis</h2>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <h3>Monthly Sales Trend</h3>
+            <img src="output/monthly_sales_linechart.png">
+        </div>
+
+        <div class="chart-card">
+            <h3>Sales by Region</h3>
+            <img src="output/Sales_by_region.png">
+        </div>
+
+        <div class="chart-card">
+            <h3>Sales by Category</h3>
+            <img src="output/Sales_by_category.png">
+        </div>
+
+
+<!-- CUSTOMER ANALYSIS -->
+<div class="dashboard-section">
+
+    <h2 class="section-title">Customer Analysis</h2>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <h3>Top 10 Customers by Sales</h3>
+            <img src="output/Top10_customers_bargraph.png">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PRODUCT PERFORMANCE -->
+<div class="dashboard-section">
+
+    <h2 class="section-title">Product Performance</h2>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <h3>Top 10 Products by Sales</h3>
+            <img src="output/Top10_product.png">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PROFIT ANALYSIS -->
+<div class="dashboard-section">
+
+    <h2 class="section-title">Profit Analysis</h2>
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+            <h3>Profit by Category</h3>
+            <img src="output/Profit_by_Category.png">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Correlation heatmap -->
+<div class ="dashboard-section">
+
+    <h2 class ="Section-title">Correlation heatmap</h2>
+
+    <div class ="chart-grid">
+
+        <div class = "chart-card">
+            <h3>correlation heatmap</h3>
+            <img src="output/correlation_heatmap.png">
+        </div>
+    </div>
+</div>
+</body>
+</html>
